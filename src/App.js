@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 
 class ContactList extends Component {
   render(){
-    const people = [
-      {name: 'Keira'},  
-      {name: 'Loma'},  
-      {name: 'Zakary'}  
-    ]
+    const people = this.props.contacts;
     
     return <ul>
       {people.map(person => (
@@ -19,7 +15,18 @@ class ContactList extends Component {
 class App extends Component {
   render() {
     return (
-      <ContactList/>
+      <div className="App">
+      <ContactList contacts={[
+        {name: 'Keira'},  
+        {name: 'Loma'},  
+        {name: 'Zakary'}  
+      ]}/>
+      <ContactList contacts={[
+        {name: 'Cordie'},  
+        {name: 'Nikolas'},  
+        {name: 'Charlotte'}  
+      ]}/>
+      </div>
     );
   }
 }
